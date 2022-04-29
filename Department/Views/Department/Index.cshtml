@@ -1,0 +1,29 @@
+﻿@using DepartmentProject.Models
+@model List<Department>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutUsed.cshtml";
+}
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>DEPARTMAN ADI</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+        <th>DETAYLAR</th>     
+    </tr>
+    @foreach(var x in Model)
+    {
+    <tr>
+        <td>@x.DepartId</td>
+        <td>@x.DepartmentName</td>
+        <td><a href="/Department/DeleteDepartment/@x.DepartId" class="btn btn-danger">Sil</a></td>
+        <td><a href="/Department/UpdateDepartment/@x.DepartId" class="btn btn-success">Güncelle</a></td>
+        <td><a href="/Department/DepartmentDetail/@x.DepartId" class="btn btn-default" 
+            style="background-color:#dee61d">Detaylar</a></td>
+    </tr>
+    }
+</table>
+<a href="/Department/NewDepartment/" class="btn btn-primary">Yeni Departman</a>
+

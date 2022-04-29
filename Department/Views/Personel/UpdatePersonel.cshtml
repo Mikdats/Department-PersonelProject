@@ -1,0 +1,34 @@
+﻿@model DepartmentProject.Models.Personel
+@{
+    ViewData["Title"] = "UpdatePersonel";
+    Layout = "~/Views/Shared/_LayoutUsed.cshtml";
+}
+
+<br />
+@using(Html.BeginForm("UpdatedPersonel","Personel",FormMethod.Post))
+{
+    <b>Personel ID</b>
+    @Html.TextBoxFor(x=>x.PersonelId,new {@class="form-control"})
+    <br />
+    <b>Adı</b>
+    @Html.TextBoxFor(x=>x.Name,new {@class="form-control"})
+    <br />
+     <b>Soyadı</b>
+    @Html.TextBoxFor(x=>x.Surname,new {@class="form-control"})
+    <br />
+     <b>Şehir</b>
+    @Html.TextBoxFor(x=>x.City,new {@class="form-control"})
+    <br />
+    @* <b>Departman</b>
+    @Html.TextBoxFor(x=>x.Department,new {@class="form-control"})
+    <br />
+
+    <b>Departman</b>
+    @Html.DropDownListFor(x=>x.DepartId,(List<SelectListItem>)
+    ViewBag.dgr,new{@class="form-control"})
+    <br />*@
+    <button class="btn btn-default" style="background-color:#ebdebe; color:black;"
+    >Personel Güncelle</button>
+}
+
+

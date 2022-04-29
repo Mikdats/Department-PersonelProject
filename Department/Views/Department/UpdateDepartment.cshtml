@@ -1,0 +1,18 @@
+﻿@model DepartmentProject.Models.Department
+@{
+    ViewData["Title"] = "UpdateDepartment";
+    Layout = "~/Views/Shared/_LayoutUsed.cshtml";
+}
+<br />
+@using(Html.BeginForm("UpdatedDepartment","Department",FormMethod.Post))
+{
+    <b>Departman ID</b>
+    @Html.TextBoxFor(x=>x.DepartId,new {@class="form-control"})
+    <br />
+    <b>Departman Adı</b>
+    @Html.TextBoxFor(x=>x.DepartmentName,new {@class="form-control"})
+    <br />
+    <button class="btn btn-default" style="background-color:#ebdebe; color:black;"
+    >Departman Güncelle</button>
+}
+

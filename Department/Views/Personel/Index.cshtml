@@ -1,0 +1,35 @@
+﻿@using DepartmentExample.Models.Dto
+@using DepartmentProject.Models
+@model List<PersonelViewDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutUsed.cshtml";
+}
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>AD</th>
+        <th>SOYAD</th>
+        <th>ŞEHİR</th>
+        <th>DEPARTMAN</th>
+       
+    </tr>
+    @foreach(var x in Model)
+    {
+    <tr>
+        <td>@x.PersonelId</td>
+        <td>@x.Name</td>
+        <td>@x.Surname</td>
+        <td>@x.City</td>
+        <td>@x.DepartName</td>
+        <td><a href="/Personel/DeletePersonel/@x.PersonelId" class="btn btn-danger">Sil</a></td>
+        <td><a href="/Personel/UpdatePersonel/@x.PersonelId" class="btn btn-success">Güncelle</a></td>
+        
+    </tr>
+    }
+</table>
+<a href="/Personel/NewPersonel/" class="btn btn-primary">Yeni Personel</a>
+
+
+

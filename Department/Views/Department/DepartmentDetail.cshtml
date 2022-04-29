@@ -1,0 +1,31 @@
+﻿@*@using DepartmentExample.Models.Dto*@
+@using DepartmentProject.Models
+@model List<Personel>
+@{
+    ViewData["Title"] = "DepartmentDetail";
+    Layout = "~/Views/Shared/_LayoutUsed.cshtml";
+}
+
+<br />
+<h2>@ViewBag.birimad Departmanı</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>AD</th>
+        <th>SOYAD</th>
+        <th>ŞEHİR</th>
+        
+       
+    </tr>
+    @foreach(var x in Model)
+    {
+    <tr>
+        <td>@x.PersonelId</td>
+        <td>@x.Name</td>
+        <td>@x.Surname</td>
+        <td>@x.City</td>
+      
+    </tr>
+    }
+</table>
+
